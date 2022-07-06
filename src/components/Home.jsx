@@ -386,7 +386,7 @@ export default function Home() {
                                     <InputLeftElement children={<FaTerminal />}/>
                                     <Input
                                         placeholder='type the code here!'
-                                        _placeholder={{ opacity: 0.7, color: "black", fontWeight: "bold" }}
+                                        _placeholder={{ opacity: 0.55, color: "black", fontWeight: "bold" }}
                                         onChange={handleType}
                                         variant={'filled'}
                                     />

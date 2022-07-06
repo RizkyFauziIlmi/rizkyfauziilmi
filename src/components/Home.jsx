@@ -344,14 +344,14 @@ export default function Home() {
                         <ListItem>
                             <ListIcon position={'relative'} as={slide.isOpen ? FcCheckmark : FcEngineering } animation={!init ? circleAnimation('reverse') : ''} />
                                 <button onClick={handleInit} >
-                                    <Code fontSize={'sm'} children='const user = new Programmer();' />
+                                    <Code fontSize={'xs'} children='const user = new Programmer();' />
                                 </button>
                         </ListItem>
                         <ListItem>
                             <Collapse in={slide.isOpen}>
                                 <ListIcon position={'relative'} as={profile ? FcCheckmark : FcEngineering} animation={!profile ? circleAnimation('reverse') : '' } />
                                 <button onClick={handleProfile}>
-                                    <Code fontSize={'sm'} children='user.profile();' />
+                                    <Code fontSize={'xs'} children='user.profile();' />
                                 </button>
                             </Collapse>
                         </ListItem>
@@ -359,7 +359,7 @@ export default function Home() {
                             <Collapse in={slide.isOpen}>
                                 <ListIcon position={'relative'} as={hobby ? FcCheckmark : FcEngineering} animation={!hobby ? circleAnimation('reverse') : ''} />
                                 <button onClick={handleHobby}>
-                                    <Code fontSize={'sm'} children='user.hobby();' />
+                                    <Code fontSize={'xs'} children='user.hobby();' />
                                 </button>
                             </Collapse>
                         </ListItem>

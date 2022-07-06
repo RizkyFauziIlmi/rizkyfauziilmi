@@ -62,7 +62,7 @@ import {
     FcEngineering, 
     FcSynchronize,
 } from 'react-icons/fc'
-
+import { MdFormatClear } from "react-icons/md"
 
 import profileImage from '../assets/image/profile.png'
 import LiteracyPanel from "./Other/LiteracyPanel"
@@ -170,6 +170,10 @@ export default function Home() {
             </AlertDescription>
         </Alert>
     )
+
+    const handleClearInput = () => {
+        setType('')
+    }
 
     const handleToast = (icon, title, description, status, duration, isClosable, position, variant) => {
         if (!toast.isActive(id)) {
@@ -389,16 +393,20 @@ export default function Home() {
                                         _placeholder={{ opacity: 0.4, color: "black", fontWeight: 500 }}
                                         onChange={handleType}
                                         variant={'filled'}
+                                        value={type}
                                     />
                                     <InputRightElement>
                                         <IconButton aria-label="Execute" icon={<FaTools />} onClick={handleExecute} />
                                     </InputRightElement>
                                 </InputGroup>
-                                <Flex gap={2} pt={2} justifyContent={'flex-end'}>
-                                    <Kbd>enter</Kbd> 
-                                    <Text fontWeight={'bold'}>Or</Text> 
-                                    <Kbd>↩</Kbd>
-                                </Flex>
+                                <Flex mt={2} fontSize={'xs'} justifyContent={'space-between'}>
+                                    <IconButton size={'sm'} aria-label="clear-input" isLoading={type === "" ? true : false} icon={<MdFormatClear />} onClick={handleClearInput} />
+                                    <Flex gap={2} pt={2} justifyContent={'flex-end'}>
+                                        <Kbd>enter</Kbd> 
+                                        <Text fontWeight={'bold'}>Or</Text> 
+                                        <Kbd>↩</Kbd>
+                                    </Flex>
+                                </Flex>    
                         </ListItem>
                     </List> 
                 </Flex>

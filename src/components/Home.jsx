@@ -385,12 +385,9 @@ export default function Home() {
                                 <InputGroup position={'relative'} mt={2}>
                                     <InputLeftElement children={<FaTerminal />}/>
                                     <Input
-                                        focusBorderColor='lime'
                                         placeholder='type the code here!'
-                                        _placeholder={{ opacity: 1, color: 'gray.500' }}
-                                        color={'yellow'}
+                                        _placeholder={{ opacity: 0.7, color: "black", fontWeight: "bold" }}
                                         onChange={handleType}
-                                        colorScheme={'yellow'}
                                         variant={'filled'}
                                     />
                                     <InputRightElement>

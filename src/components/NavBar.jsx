@@ -75,7 +75,7 @@ export default function NavBar() {
                 <Tooltip hasArrow label="Github" arrowSize={10} fontSize={'sm'} bg={isDark ? 'white' : '#1A202C'}>
                     <Link href="https://github.com/RizkyFauziIlmi" target={'_blank'}>
                         <IconButton 
-                            aria-label="github link"
+                            aria-label="my-github-profile"
                             icon={<FaGithub />} 
                             display={['none', 'none', 'flex', 'flex']}
                         />
@@ -84,7 +84,7 @@ export default function NavBar() {
                 <Tooltip hasArrow label="Instagram" arrowSize={10} fontSize={'sm'} bg={isDark ? 'white' : '#1A202C'}>
                     <Link href="https://www.instagram.com/fauzirizkyw" target={'_blank'}>
                         <IconButton 
-                            aria-label="instagram link"
+                            aria-label="my-instagram-profile"
                             icon={<FaInstagram />} 
                             display={['none', 'none', 'flex', 'flex']}
                         />
@@ -93,7 +93,7 @@ export default function NavBar() {
                 <Tooltip hasArrow label="Codepen" arrowSize={10} fontSize={'sm'} bg={isDark ? 'white' : '#1A202C'}>
                     <Link href="https://codepen.io/rizkyfauziilmi-the-vuer" target={'_blank'}>
                         <IconButton 
-                            aria-label="codepen link"
+                            aria-label="my-codepen-profile"
                             icon={<FaCodepen />} 
                             display={['none', 'none', 'flex', 'flex']}    
                         />
@@ -109,7 +109,7 @@ export default function NavBar() {
                 onClick={toggleColorMode} 
                 justifySelf={'end'} 
             />
-            <Button textAlign={'center'} ref={btnRef} onClick={onOpen} display={['flex', 'flex', 'none', 'none']}>
+            <Button aria-label="button-drawer" textAlign={'center'} ref={btnRef} onClick={onOpen} display={['flex', 'flex', 'none', 'none']}>
                 <HiChevronDoubleDown />
             </Button>
         </Flex>
@@ -134,7 +134,7 @@ export default function NavBar() {
                             <Link href="https://github.com/RizkyFauziIlmi" target={'_blank'}>
                                 <Flex alignItems={'center'} gap={1.5}>
                                     <IconButton 
-                                        aria-label="github link"
+                                        aria-label="my-github-profile"
                                         icon={<FaGithub />} 
                                     />
                                     <Text>Github</Text>
@@ -143,7 +143,7 @@ export default function NavBar() {
                             <Link href="https://www.instagram.com/fauzirizkyw" target={'_blank'}>
                                 <Flex alignItems={'center'} gap={1.5}>
                                     <IconButton 
-                                        aria-label="instagram link"
+                                        aria-label="my-instagram-profile"
                                         icon={<FaInstagram />} 
                                     />
                                     <Text>Instagram</Text> 
@@ -152,7 +152,7 @@ export default function NavBar() {
                             <Link href="https://codepen.io/rizkyfauziilmi-the-vuer" target={'_blank'}>
                                 <Flex alignItems={'center'} gap={1.5}>
                                     <IconButton 
-                                        aria-label="codepen link"
+                                        aria-label="my-codepen-profile"
                                         icon={<FaCodepen />}  
                                     />
                                     <Text>Codepen</Text>                                     

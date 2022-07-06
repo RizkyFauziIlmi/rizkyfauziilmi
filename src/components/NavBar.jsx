@@ -132,39 +132,33 @@ export default function NavBar() {
                         <Heading width={'100%'} textAlign={'left'} fontSize={'xl'} pt={5}>Contact me</Heading>
                         <Divider />
                         <Flex gap={2} flexDirection={'column'} alignItems={'flex-start'} width={'100%'}>
-                            <Tooltip placement={'right'} hasArrow label="Github" arrowSize={10} fontSize={'sm'} bg={isDark ? 'white' : '#1A202C'}>
-                                <Link href="https://github.com/RizkyFauziIlmi" target={'_blank'}>
-                                    <Flex alignItems={'center'} gap={1.5}>
-                                        <IconButton 
-                                            aria-label="github link"
-                                            icon={<FaGithub />} 
-                                        />
-                                        <Text>Github</Text>
-                                    </Flex>
-                                </Link>
-                            </Tooltip>
-                            <Tooltip placement={'right'} hasArrow label="Instagram" arrowSize={10} fontSize={'sm'} bg={isDark ? 'white' : '#1A202C'}>
-                                <Link href="https://www.instagram.com/fauzirizkyw" target={'_blank'}>
-                                    <Flex alignItems={'center'} gap={1.5}>
-                                        <IconButton 
-                                            aria-label="instagram link"
-                                            icon={<FaInstagram />} 
-                                        />
-                                        <Text>Instagram</Text> 
-                                    </Flex>
-                                </Link>
-                            </Tooltip>
-                            <Tooltip placement={'right'} hasArrow label="Codepen" arrowSize={10} fontSize={'sm'} bg={isDark ? 'white' : '#1A202C'}>
-                                <Link href="https://codepen.io/rizkyfauziilmi-the-vuer" target={'_blank'}>
-                                    <Flex alignItems={'center'} gap={1.5}>
-                                        <IconButton 
-                                            aria-label="codepen link"
-                                            icon={<FaCodepen />}  
-                                        />
-                                        <Text>Codepen</Text>                                     
-                                    </Flex>
-                                </Link>
-                            </Tooltip>
+                            <Link href="https://github.com/RizkyFauziIlmi" target={'_blank'}>
+                                <Flex alignItems={'center'} gap={1.5}>
+                                    <IconButton 
+                                        aria-label="github link"
+                                        icon={<FaGithub />} 
+                                    />
+                                    <Text>Github</Text>
+                                </Flex>
+                            </Link>
+                            <Link href="https://www.instagram.com/fauzirizkyw" target={'_blank'}>
+                                <Flex alignItems={'center'} gap={1.5}>
+                                    <IconButton 
+                                        aria-label="instagram link"
+                                        icon={<FaInstagram />} 
+                                    />
+                                    <Text>Instagram</Text> 
+                                </Flex>
+                            </Link>
+                            <Link href="https://codepen.io/rizkyfauziilmi-the-vuer" target={'_blank'}>
+                                <Flex alignItems={'center'} gap={1.5}>
+                                    <IconButton 
+                                        aria-label="codepen link"
+                                        icon={<FaCodepen />}  
+                                    />
+                                    <Text>Codepen</Text>                                     
+                                </Flex>
+                            </Link>
                         </Flex>
                         <Heading width={'100%'} textAlign={'left'} fontSize={'xl'} pt={5}><sup>*</sup> Notes</Heading>
                         <Divider />

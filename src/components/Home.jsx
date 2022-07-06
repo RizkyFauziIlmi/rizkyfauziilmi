@@ -335,7 +335,7 @@ export default function Home() {
     return(
         <React.Fragment>
             <Stack direction={'column'} width={'100%'} height={'100vh'}>
-                <Heading pt={5}>Click or type to Run code</Heading>
+                <Heading pt={5} fontSize={'lg'}>Click or type to Run code</Heading>
                 <Flex justifyContent={'space-between'} flexDirection={'column'} height={'90%'}>
                     <List>
                         <ListItem>

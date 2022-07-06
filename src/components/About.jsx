@@ -40,6 +40,8 @@ export default function About() {
                         </Flex>
                         <pre>
                             <Code 
+                                overflow={'auto'}
+                                width={['80vw', '50vw', '40vw', '30vw']}
                                 children={`
 ├── @chakra-ui/icons@2.0.2
 ├── @chakra-ui/react@2.2.1

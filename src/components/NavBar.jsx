@@ -76,14 +76,16 @@ export default function NavBar() {
                     <Link href="https://github.com/RizkyFauziIlmi" target={'_blank'}>
                         <IconButton 
                             aria-label="my-github-profile"
+                            className="my-github-profile"
                             icon={<FaGithub />} 
                             display={['none', 'none', 'flex', 'flex']}
                         />
                     </Link>
                 </Tooltip>
                 <Tooltip hasArrow label="Instagram" arrowSize={10} fontSize={'sm'} bg={isDark ? 'white' : '#1A202C'}>
-                    <Link href="https://www.instagram.com/fauzirizkyw" target={'_blank'}>
+                    <Link className="my-instagram-profile" href="https://www.instagram.com/fauzirizkyw" target={'_blank'}>
                         <IconButton 
+                            className="my-instagram-profile"
                             aria-label="my-instagram-profile"
                             icon={<FaInstagram />} 
                             display={['none', 'none', 'flex', 'flex']}
@@ -91,9 +93,10 @@ export default function NavBar() {
                     </Link>
                 </Tooltip>
                 <Tooltip hasArrow label="Codepen" arrowSize={10} fontSize={'sm'} bg={isDark ? 'white' : '#1A202C'}>
-                    <Link href="https://codepen.io/rizkyfauziilmi-the-vuer" target={'_blank'}>
+                    <Link className="my-codepen-profile" href="https://codepen.io/rizkyfauziilmi-the-vuer" target={'_blank'}>
                         <IconButton 
                             aria-label="my-codepen-profile"
+                            className="my-codepen-profile"
                             icon={<FaCodepen />} 
                             display={['none', 'none', 'flex', 'flex']}    
                         />
@@ -131,31 +134,34 @@ export default function NavBar() {
                         <Heading width={'100%'} textAlign={'left'} fontSize={'xl'} pt={5}>Contact me</Heading>
                         <Divider />
                         <Flex gap={2} flexDirection={'column'} alignItems={'flex-start'} width={'100%'}>
-                            <Link href="https://github.com/RizkyFauziIlmi" target={'_blank'}>
+                            <Link className="my-github-profile" href="https://github.com/RizkyFauziIlmi" target={'_blank'}>
                                 <Flex alignItems={'center'} gap={1.5}>
                                     <IconButton 
                                         aria-label="my-github-profile"
+                                        className="my-github-profile"
                                         icon={<FaGithub />} 
                                     />
-                                    <Text>My Github Profile</Text>
+                                    <Text>Github</Text>
                                 </Flex>
                             </Link>
-                            <Link href="https://www.instagram.com/fauzirizkyw" target={'_blank'}>
+                            <Link className="my-instagram-profile" href="https://www.instagram.com/fauzirizkyw" target={'_blank'}>
                                 <Flex alignItems={'center'} gap={1.5}>
                                     <IconButton 
                                         aria-label="my-instagram-profile"
+                                        className="my-instagram-profile"
                                         icon={<FaInstagram />} 
                                     />
-                                    <Text>My Instagram Profile</Text> 
+                                    <Text>Instagram</Text> 
                                 </Flex>
                             </Link>
-                            <Link href="https://codepen.io/rizkyfauziilmi-the-vuer" target={'_blank'}>
+                            <Link className="my-codepen-profile" href="https://codepen.io/rizkyfauziilmi-the-vuer" target={'_blank'}>
                                 <Flex alignItems={'center'} gap={1.5}>
                                     <IconButton 
                                         aria-label="my-codepen-profile"
+                                        className="my-codepen-profile"
                                         icon={<FaCodepen />}  
                                     />
-                                    <Text>My Codepen Profile</Text>                                     
+                                    <Text>Codepen</Text>                                     
                                 </Flex>
                             </Link>
                         </Flex>

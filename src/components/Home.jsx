@@ -64,7 +64,7 @@ import {
 } from 'react-icons/fc'
 
 
-import profileImage from '../assets/image/profile.jfif'
+import profileImage from '../assets/image/profile.png'
 import LiteracyPanel from "./Other/LiteracyPanel"
 import MusicPanel from "./Other/MusicPanel"
 

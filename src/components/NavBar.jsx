@@ -41,8 +41,7 @@ import {
 import { HiChevronDoubleDown } from 'react-icons/hi'
 
 import { createBreakpoints } from '@chakra-ui/theme-tools'
-import image from '../assets/image/avatar.jfif'
-
+import image from '../assets/image/profile.png'
 
 
 
@@ -70,7 +69,7 @@ export default function NavBar() {
         <Flex alignItems={'center'} gap={4} width={'20%'}>
             <Flex alignItems={'center'} gap={1}>
                 <Avatar name="Rizky Fauzi Ilmi" src={image} border={'1px solid black'} />
-                <Heading size={'md'}>Kyra</Heading>
+                <Heading size={'md'}>Rizky</Heading>
             </Flex>
             <Flex gap={2}>
                 <Tooltip hasArrow label="Github" arrowSize={10} fontSize={'sm'} bg={isDark ? 'white' : '#1A202C'}>

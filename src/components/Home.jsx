@@ -335,9 +335,12 @@ export default function Home() {
     return(
         <React.Fragment>
             <Stack direction={'column'} width={'100%'} height={'100vh'}>
-                <Heading pt={5} fontSize={'lg'}>Click or type to Run code</Heading>
                 <Flex justifyContent={'space-between'} flexDirection={'column'} height={'90%'}>
                     <List>
+                        <ListItem>
+                            <ListIcon as={null} />
+                            <Code colorScheme={'yellow'} width={'max-content'} children={"// Click or type to Run code"} />
+                        </ListItem>
                         <ListItem>
                             <ListIcon position={'relative'} as={slide.isOpen ? FcCheckmark : FcEngineering } animation={!init ? circleAnimation('reverse') : ''} />
                                 <button onClick={handleInit} >

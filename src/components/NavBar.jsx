@@ -69,7 +69,7 @@ export default function NavBar() {
         <Flex alignItems={'center'} gap={4} width={'20%'}>
             <Flex alignItems={'center'} gap={1}>
                 <Avatar name="Rizky Fauzi Ilmi" src={image} border={'1px solid black'} />
-                <Heading size={'md'}>Rizky</Heading>
+                <Heading size={'md'} fontSize={'lg'} width={'max-content'}>Rizky Fauzi Ilmi</Heading>
             </Flex>
             <Flex gap={2}>
                 <Tooltip hasArrow label="Github" arrowSize={10} fontSize={'sm'} bg={isDark ? 'white' : '#1A202C'}>

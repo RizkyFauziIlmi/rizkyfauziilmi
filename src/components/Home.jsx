@@ -339,19 +339,19 @@ export default function Home() {
                     <List>
                         <ListItem>
                             <ListIcon as={null} />
-                            <Code colorScheme={'yellow'} width={'max-content'} children={"// Click or type to Run code"} />
+                            <Code width={'max-content'} children={"// Click or type to Run code"} />
                         </ListItem>
                         <ListItem>
                             <ListIcon position={'relative'} as={slide.isOpen ? FcCheckmark : FcEngineering } animation={!init ? circleAnimation('reverse') : ''} />
                                 <button onClick={handleInit} >
-                                    <Code children='const user = new Programmer();' colorScheme={'yellow'} />
+                                    <Code children='const user = new Programmer();' />
                                 </button>
                         </ListItem>
                         <ListItem>
                             <Collapse in={slide.isOpen}>
                                 <ListIcon position={'relative'} as={profile ? FcCheckmark : FcEngineering} animation={!profile ? circleAnimation('reverse') : '' } />
                                 <button onClick={handleProfile}>
-                                    <Code children='user.profile();' colorScheme={'yellow'} />
+                                    <Code children='user.profile();' />
                                 </button>
                             </Collapse>
                         </ListItem>
@@ -359,7 +359,7 @@ export default function Home() {
                             <Collapse in={slide.isOpen}>
                                 <ListIcon position={'relative'} as={hobby ? FcCheckmark : FcEngineering} animation={!hobby ? circleAnimation('reverse') : ''} />
                                 <button onClick={handleHobby}>
-                                    <Code children='user.hobby();' colorScheme={'yellow'} />
+                                    <Code children='user.hobby();' />
                                 </button>
                             </Collapse>
                         </ListItem>
@@ -367,7 +367,7 @@ export default function Home() {
                             {all ? <ListIcon position={'relative'} as={FcSynchronize} animation={circleAnimation('normal')} /> : ''}
                             {all 
                                 ?   <button onClick={handleReset}>
-                                        <Code children="user.reset();" colorScheme={'yellow'}/>
+                                        <Code children="user.reset();" />
                                     </button>
                                 :   <Button
                                         isLoading={all ? false : true}

@@ -69,7 +69,7 @@ export default function NavBar() {
         <Flex alignItems={'center'} gap={4} width={'20%'}>
             <Flex alignItems={'center'} gap={1}>
                 <Avatar name="Rizky Fauzi Ilmi" src={image} border={'1px solid black'} />
-                <Heading size={'md'} fontSize={'lg'} width={'max-content'}>Rizky Fauzi Ilmi</Heading>
+                <Heading size={'md'} fontSize={'md'} fontWeight={'bold'} width={'max-content'}>Rizky Fauzi Ilmi</Heading>
             </Flex>
             <Flex gap={2}>
                 <Tooltip hasArrow label="Github" arrowSize={10} fontSize={'sm'} bg={isDark ? 'white' : '#1A202C'}>
@@ -174,7 +174,7 @@ export default function NavBar() {
                 </DrawerBody>
 
                 <DrawerFooter>
-                    <Button bgColor={'orange.300'} textShadow={'1.5px 1.5px black'} mr={3} onClick={onClose}>
+                    <Button bgColor={'orange.300'} mr={3} onClick={onClose}>
                     Close
                     </Button>
                 </DrawerFooter>

@@ -137,7 +137,7 @@ export default function NavBar() {
                                         aria-label="my-github-profile"
                                         icon={<FaGithub />} 
                                     />
-                                    <Text>My Github</Text>
+                                    <Text>My Github Profile</Text>
                                 </Flex>
                             </Link>
                             <Link href="https://www.instagram.com/fauzirizkyw" target={'_blank'}>
@@ -146,7 +146,7 @@ export default function NavBar() {
                                         aria-label="my-instagram-profile"
                                         icon={<FaInstagram />} 
                                     />
-                                    <Text>My Instagram</Text> 
+                                    <Text>My Instagram Profile</Text> 
                                 </Flex>
                             </Link>
                             <Link href="https://codepen.io/rizkyfauziilmi-the-vuer" target={'_blank'}>
@@ -155,7 +155,7 @@ export default function NavBar() {
                                         aria-label="my-codepen-profile"
                                         icon={<FaCodepen />}  
                                     />
-                                    <Text>My Codepen</Text>                                     
+                                    <Text>My Codepen Profile</Text>                                     
                                 </Flex>
                             </Link>
                         </Flex>

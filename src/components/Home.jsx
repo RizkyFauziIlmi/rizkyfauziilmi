@@ -339,7 +339,7 @@ export default function Home() {
                     <List>
                         <ListItem>
                             <ListIcon as={null} />
-                            <Code fontSize={'sm'} width={'max-content'} children={"// Click or type to Run code"} />
+                            <Code fontSize={'xs'} width={'max-content'} children={"// Click or type to Run code"} />
                         </ListItem>
                         <ListItem>
                             <ListIcon position={'relative'} as={slide.isOpen ? FcCheckmark : FcEngineering } animation={!init ? circleAnimation('reverse') : ''} />

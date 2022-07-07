@@ -325,7 +325,7 @@ export default function Home() {
 
     const handleHobby = () => {
         if (init) {
-            if (init && profile && !hobby) {
+            if (init && !hobby) {
                 handleProgressIncrement()
             }
             handleToast(null, 'Compiled Succsessfully!', "Code Executed Successfully", 'success', 3000, true, 'bottom', 'solid')

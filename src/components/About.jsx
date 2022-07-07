@@ -57,7 +57,6 @@ export default function About() {
 ├── react-spinners@0.13.3
 ├── react-vertical-timeline-component@3.5.2
 ├── react@18.2.0
-├── react-clamp-lines@3.0.3
 └── react-clamp-lines@3.0.3
                                    `
                                 }

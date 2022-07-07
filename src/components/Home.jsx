@@ -222,7 +222,6 @@ export default function Home() {
     }
 
     const keyboardHandle = (e) => {
-        console.log(e.key)
         if (e.key === 'Enter') {
             const enter = document.querySelector('[aria-label="Execute"]')
             enter.click()

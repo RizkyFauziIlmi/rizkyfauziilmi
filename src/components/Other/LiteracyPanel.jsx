@@ -89,7 +89,7 @@ export default function LiteracyPanel() {
                     </AccordionButton>
                     </h2>
                     <AccordionPanel pb={4}>
-                    <Grid templateColumns={['repeat(2, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)', 'repeat(3, 1fr)']} gap={2}>
+                    <Grid maxHeight={'300px'} overflow={'auto'} templateColumns={['repeat(2, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)', 'repeat(3, 1fr)']} gap={2}>
                         {databese.novel.map((data) => {
                             return(
                                 <GridItem key={data.name}>
@@ -115,7 +115,7 @@ export default function LiteracyPanel() {
                     </AccordionButton>
                     </h2>
                     <AccordionPanel pb={4}>
-                        <Grid templateColumns={['repeat(2, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)', 'repeat(3, 1fr)']} gap={2}>
+                        <Grid maxHeight={'300px'} overflow={'auto'} templateColumns={['repeat(2, 1fr)', 'repeat(2, 1fr)', 'repeat(3, 1fr)', 'repeat(3, 1fr)']} gap={2}>
                             {databese.manga.map((data) => {
                                 return(
                                     <GridItem key={data.name}>

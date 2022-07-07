@@ -46,6 +46,12 @@ import {
     Switch,
     Progress,
     ProgressLabel,
+    VStack,
+    Avatar,
+    Container,
+    Divider,
+    HStack,
+    Badge,
 } from "@chakra-ui/react"
 
 import { createBreakpoints } from '@chakra-ui/theme-tools'
@@ -56,7 +62,7 @@ import React, {
 import { useEffect } from "react"
 
 import { 
-    FaAngleDoubleDown, FaTerminal, FaTools
+    FaAngleDoubleDown, FaCat, FaChess, FaCity, FaGuitar, FaJs, FaTerminal, FaTools
 } from "react-icons/fa"
 
 import { 
@@ -388,8 +394,8 @@ export default function Home() {
                                 ?   <Button height={'unset'} variant={'unstyled'} onClick={handleReset}>
                                         <Code children="user.reset();" />
                                     </Button>
-                                :   <Progress hasStripe isAnimated max={100} min={0} colorScheme='green' size='lg' value={progress} >
-                                        <ProgressLabel textShadow={'1px 1px 2px black'} fontSize={'md'}>{`${Math.floor(progress)}%`}</ProgressLabel>
+                                :   <Progress isIndeterminate={progress === 0 ? true : false} hasStripe isAnimated max={100} min={0} colorScheme='green' size='md' value={progress} >
+                                        <ProgressLabel textShadow={'1px 1px 2px black'} fontSize={'sm'}>{progress === 0 ? '' : `${Math.floor(progress)}%`}</ProgressLabel>
                                     </Progress>   
                             }
                         </ListItem>
@@ -422,43 +428,58 @@ export default function Home() {
                 <Modal onClose={firstModal.onClose} isOpen={firstModal.isOpen} isCentered motionPreset={'slideInBottom'}>
                     <ModalOverlay />
                     <ModalContent height={['80vh', '80vh', '80vh', '80vh']} width={['90vw', '100vw', '100vw', '100vw']} overflow={'auto'}>
-                        <ModalHeader>
-                            <Stack direction={'row'} alignItems={'center'} justifyContent={'center'}><FaAngleDoubleDown /><Heading>About Me</Heading></Stack>
+                        <ModalHeader textAlign={'center'}>
+                            <Text fontSize={'2xl'}>Profile</Text>
                         </ModalHeader>
-                        <ModalCloseButton />
                         <ModalBody>
-                            <Flex flexDirection={'column'} justifyContent={'flex-start'} alignItems={'center'}>
-                                <Image src={profileImage} boxShadow={'2px 2px 5px black'} borderRadius={'5px'} />
-                                <TableContainer>
-                                    <Table variant={'simple'}>
-                                        <Tbody>
-                                            <Tr>
-                                                <Td>Name</Td>
-                                                <Td>Rizky Fauzi Ilmi</Td>
-                                            </Tr>
-                                            <Tr>
-                                                <Td>Tall</Td>
-                                                <Td>178 cm</Td>
-                                            </Tr>
-                                            <Tr>
-                                                <Td>Birth</Td>
-                                                <Td>June 8<sup>th</sup>, 2004</Td>
-                                            </Tr>
-                                            <Tr>
-                                                <Td>Favourite Color</Td>
-                                                <Td>Blue</Td>
-                                            </Tr>
-                                            <Tr>
-                                                <Td>Favourite Food</Td>
-                                                <Td>all food except smelly food</Td>
-                                            </Tr>
-                                        </Tbody>
-                                    </Table>
-                                </TableContainer>
-                            </Flex>
+                            <VStack>
+                                <Flex textAlign={'center'} flexDir={'column'} alignItems={'center'} justifyContent={'center'}>
+                                    <Avatar size={'lg'} name="Rizky Fauzi Ilmi" src={Image} />
+                                    <Container>
+                                        <Text fontSize={'md'} fontWeight={'bold'}>Rizky Fauzi Ilmi</Text>
+                                        <Text fontSize={'xs'}>front end specialist</Text>
+                                    </Container>
+                                </Flex>
+                                <Container pt={10} textAlign={'left'}>
+                                    <Text opacity={0.5}>Recent Activities</Text>
+                                    <Divider />
+                                    <HStack p={2} mt={1} overflow={'auto'}>
+                                        <Badge variant={'outline'}>Programming</Badge>
+                                        <Badge variant={'outline'} colorScheme='green'>Playing Guitar</Badge>
+                                        <Badge variant={'outline'} colorScheme='red'>Reading Books</Badge>
+                                        <Badge variant={'outline'} colorScheme='purple'>Watching Movies or Anime</Badge>
+                                    </HStack>
+                                </Container>    
+                                <Container pt={5}>
+                                    <Text opacity={0.5}>Favorite Things</Text>
+                                    <Divider />
+                                    <Container p={2}>
+                                        <Flex alignItems={'center'} gap={2}>
+                                            <Text fontWeight={'bold'}>Programming Langguage</Text>
+                                            <FaJs />
+                                        </Flex>
+                                        <Flex alignItems={'center'} gap={2}>
+                                            <Text fontWeight={'bold'}>Musical Instruments</Text>
+                                            <FaGuitar />
+                                        </Flex>
+                                        <Flex alignItems={'center'} gap={2}>
+                                            <Text fontWeight={'bold'}>Animal</Text>
+                                            <FaCat />
+                                        </Flex>
+                                        <Flex alignItems={'center'} gap={2}>
+                                            <Text fontWeight={'bold'}>Sport</Text>
+                                            <FaChess />
+                                        </Flex>
+                                        <Flex alignItems={'center'} gap={2}>
+                                            <Text fontWeight={'bold'}>Place</Text>
+                                            <FaCity />
+                                        </Flex>
+                                    </Container>
+                                </Container>
+                            </VStack>
                         </ModalBody>
                         <ModalFooter>
-                            <Button onClick={firstModal.onClose}>Close</Button>
+                            <Button onClick={firstModal.onClose} boxShadow={'dark-lg'}>Close</Button>
                         </ModalFooter>
                     </ModalContent>
                 </Modal>      
@@ -466,7 +487,6 @@ export default function Home() {
                     <ModalOverlay />
                     <ModalContent height={['80vh', '80vh', '80vh', '80vh']} width={['90vw', '100vw', '100vw', '100vw']} overflow={'auto'}>
                         <ModalHeader><Heading>Hobby</Heading></ModalHeader>
-                        <ModalCloseButton />
                         <ModalBody>
                             <Tabs isFitted variant='enclosed' isLazy lazyBehavior={ keepplay ? 'keepMounted' : 'unmount'}>
                                 <TabList mb='1em' overflowX={'auto'} overflowY={'hidden'}>

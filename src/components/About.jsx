@@ -54,10 +54,11 @@ export default function About() {
 ├── react-icons@4.4.0
 ├── react-responsive-carousel@3.2.23
 ├── react-scripts@5.0.1
-├── react@18.2.0
+├── react-spinners@0.13.3
 ├── react-vertical-timeline-component@3.5.2
+├── react@18.2.0
 ├── react-clamp-lines@3.0.3
-└── vercel@26.0.0
+└── react-clamp-lines@3.0.3
                                    `
                                 }
                                 p={2}

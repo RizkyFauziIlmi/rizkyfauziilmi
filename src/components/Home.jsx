@@ -44,6 +44,8 @@ import {
     FormControl,
     FormLabel,
     Switch,
+    Progress,
+    ProgressLabel,
 } from "@chakra-ui/react"
 
 import { createBreakpoints } from '@chakra-ui/theme-tools'
@@ -63,6 +65,7 @@ import {
     FcSynchronize,
 } from 'react-icons/fc'
 import { MdFormatClear } from "react-icons/md"
+import { BeatLoader } from "react-spinners"
 
 import profileImage from '../assets/image/profile.png'
 import LiteracyPanel from "./Other/LiteracyPanel"
@@ -80,6 +83,7 @@ export default function Home() {
     const [all, setAll] = useBoolean()
     const [type, setType] = useState('')
     const toast = useToast()
+    const [progress, setProgress] = useState(0)
     const id = 'test-toast'
 
     const notAvalaible =(
@@ -290,11 +294,16 @@ export default function Home() {
         }
     }
 
+    const handleProgressIncrement = () => [
+        setProgress(progress + (100 / 3))
+    ]
+
     const handleInit = () => {
         setInit.on()
         if (init === true) {
             handleToast(null, 'failed to compile!', "object has already been initiated", 'error', 3000, true, 'bottom', 'solid')
         } else {
+            handleProgressIncrement()
             handleToast(null, 'Compiled Succsessfully!', "Object Initiated Successfully", 'success', 3000, true, 'bottom', 'solid')
             slide.onOpen()
         }
@@ -302,17 +311,23 @@ export default function Home() {
 
     const handleProfile = () => {
         if (init) {
+            if (init && !profile) {
+                handleProgressIncrement()
+            }
             handleToast(null, 'Compiled Succsessfully!', "Code Executed Successfully", 'success', 3000, true, 'bottom', 'solid')
             setProfile.on()
             firstModal.onOpen()
         } else {
             handleToastRender(3000, notAvalaible)
-        }
+        } 
         
     }
 
     const handleHobby = () => {
         if (init) {
+            if (init && profile && !hobby) {
+                handleProgressIncrement()
+            }
             handleToast(null, 'Compiled Succsessfully!', "Code Executed Successfully", 'success', 3000, true, 'bottom', 'solid')
             setHobby.on()
             secondModal.onOpen()
@@ -347,60 +362,54 @@ export default function Home() {
                         </ListItem>
                         <ListItem>
                             <ListIcon position={'relative'} as={slide.isOpen ? FcCheckmark : FcEngineering } animation={!init ? circleAnimation('reverse') : ''} />
-                                <button onClick={handleInit} >
+                                <Button height={'unset'} onClick={handleInit} variant={'unstyled'} >
                                     <Code fontSize={'xs'} children='const user = new Programmer();' />
-                                </button>
+                                </Button>
                         </ListItem>
                         <ListItem>
                             <Collapse in={slide.isOpen}>
                                 <ListIcon position={'relative'} as={profile ? FcCheckmark : FcEngineering} animation={!profile ? circleAnimation('reverse') : '' } />
-                                <button onClick={handleProfile}>
+                                <Button height={'unset'} variant={'unstyled'} onClick={handleProfile}>
                                     <Code fontSize={'xs'} children='user.profile();' />
-                                </button>
+                                </Button>
                             </Collapse>
                         </ListItem>
                         <ListItem>
                             <Collapse in={slide.isOpen}>
                                 <ListIcon position={'relative'} as={hobby ? FcCheckmark : FcEngineering} animation={!hobby ? circleAnimation('reverse') : ''} />
-                                <button onClick={handleHobby}>
+                                <Button height={'unset'} variant={'unstyled'} onClick={handleHobby}>
                                     <Code fontSize={'xs'} children='user.hobby();' />
-                                </button>
+                                </Button>
                             </Collapse>
                         </ListItem>
                         <ListItem>
-                            {all ? <ListIcon position={'relative'} as={FcSynchronize} animation={circleAnimation('normal')} /> : ''}
+                            {all ? <ListIcon position={'relative'} as={FcSynchronize} animation={circleAnimation('normal')} /> : <ListIcon position={'relative'} as={FcSynchronize} opacity={0} />}
                             {all 
-                                ?   <button onClick={handleReset}>
+                                ?   <Button height={'unset'} variant={'unstyled'} onClick={handleReset}>
                                         <Code children="user.reset();" />
-                                    </button>
-                                :   <Button
-                                        isLoading={all ? false : true}
-                                        loadingText='Loading'
-                                        colorScheme='teal'
-                                        variant='outline'
-                                        spinnerPlacement='start'
-                                        border={'none'}
-                                    >
-                                        <Code children="user.reset()" colorScheme={'yellow'}/>
                                     </Button>
+                                :   <Progress hasStripe isAnimated max={100} min={0} colorScheme='green' size='lg' value={progress} >
+                                        <ProgressLabel textShadow={'1px 1px 2px black'} fontSize={'md'}>{`${Math.floor(progress)}%`}</ProgressLabel>
+                                    </Progress>   
                             }
                         </ListItem>
-                        <ListItem boxShadow={'dark-lg'} p={5} mt={10} borderRadius={'5px'} width={["100%", "100%", "60vw", "35vw"]} >
+                        <ListItem p={2} boxShadow={'dark-lg'} mt={10} borderRadius={'5px'} width={["100%", "100%", "60vw", "35vw"]} >
                                 <InputGroup position={'relative'} mt={2}>
                                     <InputLeftElement children={<FaTerminal />}/>
                                     <Input
                                         placeholder='type the code here!'
-                                        _placeholder={{ opacity: 0.4, color: "black", fontWeight: 500 }}
+                                        _placeholder={{ opacity: 0.5 ,color: 'inherit'}}
                                         onChange={handleType}
                                         variant={'filled'}
                                         value={type}
+                                        isRequired
                                     />
                                     <InputRightElement>
                                         <IconButton aria-label="Execute" icon={<FaTools />} onClick={handleExecute} />
                                     </InputRightElement>
                                 </InputGroup>
                                 <Flex mt={2} fontSize={'xs'} justifyContent={'space-between'}>
-                                    <IconButton size={'sm'} aria-label="clear-input" isLoading={type === "" ? true : false} icon={<MdFormatClear />} onClick={handleClearInput} />
+                                    <IconButton size={'sm'} spinner={<BeatLoader size={5} />} aria-label="clear-input" isLoading={type === "" ? true : false} icon={<MdFormatClear />} onClick={handleClearInput} />
                                     <Flex gap={2} pt={2} justifyContent={'flex-end'}>
                                         <Kbd>enter</Kbd> 
                                         <Text fontWeight={'bold'}>Or</Text> 

@@ -5,7 +5,6 @@ import {
     Flex, 
     useDisclosure, 
     Text, 
-    Image, 
     useToast, 
     Button, 
     Modal,
@@ -14,12 +13,6 @@ import {
     ModalHeader,
     ModalFooter,
     ModalBody,
-    ModalCloseButton,
-    Table,
-    Tbody,
-    Tr,
-    Td,
-    TableContainer,
     List,
     ListItem,
     ListIcon,
@@ -61,8 +54,7 @@ import React, {
 } from "react"
 import { useEffect } from "react"
 
-import { 
-    FaAngleDoubleDown, FaCat, FaChess, FaCity, FaGuitar, FaJs, FaTerminal, FaTools
+import { FaCat, FaChess, FaCity, FaGuitar, FaJs, FaTerminal, FaTools
 } from "react-icons/fa"
 
 import { 
@@ -434,7 +426,7 @@ export default function Home() {
                         <ModalBody>
                             <VStack>
                                 <Flex textAlign={'center'} flexDir={'column'} alignItems={'center'} justifyContent={'center'}>
-                                    <Avatar size={'lg'} name="Rizky Fauzi Ilmi" src={Image} />
+                                    <Avatar size={'lg'} name="Rizky Fauzi Ilmi" src={profileImage} />
                                     <Container>
                                         <Text fontSize={'md'} fontWeight={'bold'}>Rizky Fauzi Ilmi</Text>
                                         <Text fontSize={'xs'}>front end specialist</Text>

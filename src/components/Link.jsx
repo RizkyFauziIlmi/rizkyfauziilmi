@@ -7,7 +7,7 @@ import Skills from './Skills'
 export default function Link() {
 
   return (
-    <Tabs width={'100vw'} variant={'solid-rounded'} height={'100vh'} colorScheme={'orange'} pl={3} pt={4} isLazy lazyBehavior={'keepMounted'}>
+    <Tabs minHeight={'100vh'} width={'100%'} variant={'solid-rounded'} colorScheme={'orange'} pl={3} pt={4} isLazy lazyBehavior={'keepMounted'}>
         <TabList>
             <Tab>Home</Tab>
             <Tab>Skills</Tab>

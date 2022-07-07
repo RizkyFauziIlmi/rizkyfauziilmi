@@ -351,7 +351,7 @@ export default function Home() {
 
     return(
         <React.Fragment>
-            <Stack direction={'column'} width={'100%'} height={'100vh'}>
+            <Stack direction={'column'} width={'100%'}>
                 <Flex justifyContent={'space-between'} flexDirection={'column'} height={'90%'}>
                     <List>
                         <ListItem>
@@ -386,15 +386,16 @@ export default function Home() {
                                 ?   <Button height={'unset'} variant={'unstyled'} onClick={handleReset}>
                                         <Code children="user.reset();" />
                                     </Button>
-                                :   <Progress isIndeterminate={progress === 0 ? true : false} hasStripe isAnimated max={100} min={0} colorScheme='green' size='md' value={progress} >
-                                        <ProgressLabel textShadow={'1px 1px 2px black'} fontSize={'sm'}>{progress === 0 ? '' : `${Math.floor(progress)}%`}</ProgressLabel>
+                                :   <Progress isIndeterminate={progress === 0 ? true : false} hasStripe isAnimated max={100} min={0} colorScheme='green' size='sm' value={progress} >
+                                        <ProgressLabel textShadow={'1px 1px 2px black'}>{progress === 0 ? '' : `${Math.floor(progress)}%`}</ProgressLabel>
                                     </Progress>   
                             }
                         </ListItem>
                         <ListItem p={2} boxShadow={'dark-lg'} mt={10} borderRadius={'5px'} width={["100%", "100%", "60vw", "35vw"]} >
                                 <InputGroup position={'relative'} mt={2}>
-                                    <InputLeftElement children={<FaTerminal />}/>
+                                    <InputLeftElement height={'100%'} children={<FaTerminal />}/>
                                     <Input
+                                        size={'sm'}
                                         placeholder='type the code here!'
                                         _placeholder={{ opacity: 0.5 ,color: 'inherit'}}
                                         onChange={handleType}
@@ -402,8 +403,8 @@ export default function Home() {
                                         value={type}
                                         isRequired
                                     />
-                                    <InputRightElement>
-                                        <IconButton aria-label="Execute" icon={<FaTools />} onClick={handleExecute} />
+                                    <InputRightElement height={'100%'} position={'absolute'} top={0} right={0}>
+                                        <IconButton height={'100%'} aria-label="Execute" icon={<FaTools />} onClick={handleExecute} />
                                     </InputRightElement>
                                 </InputGroup>
                                 <Flex mt={2} fontSize={'xs'} justifyContent={'space-between'}>
@@ -439,7 +440,7 @@ export default function Home() {
                                         <Badge variant={'outline'}>Programming</Badge>
                                         <Badge variant={'outline'} colorScheme='green'>Playing Guitar</Badge>
                                         <Badge variant={'outline'} colorScheme='red'>Reading Books</Badge>
-                                        <Badge variant={'outline'} colorScheme='purple'>Watching Movies or Anime</Badge>
+                                        <Badge variant={'outline'} colorScheme='purple'>Watching Movies or Animes</Badge>
                                     </HStack>
                                 </Container>    
                                 <Container pt={5}>
@@ -451,7 +452,7 @@ export default function Home() {
                                             <FaJs />
                                         </Flex>
                                         <Flex alignItems={'center'} gap={2}>
-                                            <Text fontWeight={'bold'}>Musical Instruments</Text>
+                                            <Text fontWeight={'bold'}>Musical Instrument</Text>
                                             <FaGuitar />
                                         </Flex>
                                         <Flex alignItems={'center'} gap={2}>

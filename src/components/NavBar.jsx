@@ -65,7 +65,7 @@ export default function NavBar() {
     )
 
   return(
-    <Flex alignItems={'center'} width={'100%'} justifyContent={'space-between'} p={5}>
+    <Flex alignItems={'center'} height={'max-content'} width={'100%'} justifyContent={'space-between'} p={5}>
         <Flex alignItems={'center'} gap={4} width={'20%'}>
             <Flex alignItems={'center'} gap={1}>
                 <Avatar name="Rizky Fauzi Ilmi" src={image} border={'1px solid black'} />

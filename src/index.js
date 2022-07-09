@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Calculator from './components/Calculator';
+
 import Quiz from './components/Quiz';
 import Recipe from './components/Recipe';
+import Calculator from './components/calculator/Calculator';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const Projects = React.lazy(() => import('./components/Projects'))

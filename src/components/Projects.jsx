@@ -59,7 +59,7 @@ export default function Projects() {
                 templateAreas={[
                     `"header header"
                     "nav main"
-                    "nav footer"`,
+                    "footer footer"`,
                     `"nav header"
                     "nav main"
                     "nav footer"`,

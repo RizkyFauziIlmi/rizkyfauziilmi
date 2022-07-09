@@ -404,7 +404,9 @@ export default function Home() {
                             <Collapse in={slide.isOpen}>
                                 <ListIcon position={'relative'} as={projects ? FcCheckmark : FcEngineering} animation={!projects ? circleAnimation('reverse') : ''} />
                                 <Button height={'unset'} variant={'unstyled'} onClick={handleProjects}>
-                                    <Code fontSize={'xs'} children={<Link aria-label="projects-page" to='projects' target={'_blank'}>user.projects();</Link>} />
+                                    <Link aria-label="projects-page" to='projects' target={'_blank'}>
+                                        <Code fontSize={'xs'} children={'user.projects();'} />
+                                    </Link> 
                                 </Button>
                             </Collapse>
                         </ListItem>

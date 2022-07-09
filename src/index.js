@@ -2,13 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Calculator from './components/Calculator';
+import Quiz from './components/Quiz';
+import Recipe from './components/Recipe';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const Projects = React.lazy(() => import('./components/Projects'))
 root.render(
   <React.StrictMode>
     <ChakraProvider>
       <ColorModeScript initialColorMode={'dark'} />
-      <App />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<App />} />
+          <Route path='projects' element={<Projects />} />
+          <Route path='projects/project/calculator' element={<Calculator />} />
+          <Route path='projects/project/quiz' element={<Quiz />} />
+          <Route path='projects/project/recipe' element={<Recipe />} />
+        </Routes>
+      </BrowserRouter>
     </ChakraProvider>
   </React.StrictMode>
 );

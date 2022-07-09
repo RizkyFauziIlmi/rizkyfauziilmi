@@ -51,8 +51,6 @@ export default function NavBar() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
 
-    
-
     const isDark = colorMode === 'dark'
 
     createBreakpoints(

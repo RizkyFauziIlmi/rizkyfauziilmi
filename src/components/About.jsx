@@ -58,6 +58,7 @@ export default function About() {
 ├── react-vertical-timeline-component@3.5.2
 ├── react@18.2.0
 ├── vercel@26.0.0
+├── react-router-dom@6.3.0
 └── react-clamp-lines@3.0.3
                                    `
                                 }

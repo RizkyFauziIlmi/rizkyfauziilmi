@@ -47,6 +47,8 @@ import {
     Badge,
 } from "@chakra-ui/react"
 
+import { Link } from 'react-router-dom'
+
 import { createBreakpoints } from '@chakra-ui/theme-tools'
 
 import React, { 
@@ -77,6 +79,7 @@ export default function Home() {
     const [init, setInit] = useBoolean()
     const [profile, setProfile] = useBoolean()
     const [hobby, setHobby] = useBoolean()
+    const [projects, setProjects] = useBoolean()
     const [keepplay, setKeepplay] = useBoolean()
     const [all, setAll] = useBoolean()
     const [type, setType] = useState('')
@@ -208,7 +211,7 @@ export default function Home() {
     }
 
     const handleAll = () => {
-        if (init && profile && hobby) {
+        if (init && profile && hobby && projects) {
             setAll.on()
         }
     }
@@ -240,12 +243,14 @@ export default function Home() {
         const profile = "user.profile();"
         const hobby = "user.hobby();"
         const reset = "user.reset();"
+        const projects = "user.projects();"
 
         const letter = [
             init.split('').filter(char => /[a-zA-Z]/.test(char)), 
             profile.split('').filter(char => /[a-zA-Z]/.test(char)), 
             hobby.split('').filter(char => /[a-zA-Z]/.test(char)), 
-            reset.split('').filter(char => /[a-zA-Z]/.test(char))
+            reset.split('').filter(char => /[a-zA-Z]/.test(char)),
+            projects.split('').filter(char => /[a-zA-Z]/.test(char)),
         ]
 
         if (result === init) {
@@ -256,6 +261,8 @@ export default function Home() {
             handleHobby()
         } else if (result === reset) {
             handleReset()
+        } else if (result === projects) {
+            handleProjects()
         } else {
             if (result === '') {
                 const emptyWarning = (
@@ -292,7 +299,7 @@ export default function Home() {
     }
 
     const handleProgressIncrement = () => [
-        setProgress(progress + (100 / 3))
+        setProgress(progress + (100 / 4))
     ]
 
     const handleInit = () => {
@@ -329,6 +336,20 @@ export default function Home() {
             setHobby.on()
             secondModal.onOpen()
         } else {
+            handleToastRender(3000, notAvalaible)
+        }
+    }
+
+    const handleProjects = () => {
+        if (init) {
+            if (init && !projects) {
+                handleProgressIncrement()
+            }
+            handleToast(null, 'Compiled Succsessfully!', "Code Executed Successfully", 'success', 3000, true, 'bottom', 'solid')
+            setProjects.on()
+            const projectsLink = document.querySelector('[aria-label="projects-page"]')
+            projectsLink.click()
+            } else {
             handleToastRender(3000, notAvalaible)
         }
     }
@@ -376,6 +397,14 @@ export default function Home() {
                                 <ListIcon position={'relative'} as={hobby ? FcCheckmark : FcEngineering} animation={!hobby ? circleAnimation('reverse') : ''} />
                                 <Button height={'unset'} variant={'unstyled'} onClick={handleHobby}>
                                     <Code fontSize={'xs'} children='user.hobby();' />
+                                </Button>
+                            </Collapse>
+                        </ListItem>
+                        <ListItem>
+                            <Collapse in={slide.isOpen}>
+                                <ListIcon position={'relative'} as={projects ? FcCheckmark : FcEngineering} animation={!projects ? circleAnimation('reverse') : ''} />
+                                <Button height={'unset'} variant={'unstyled'} onClick={handleProjects}>
+                                    <Code fontSize={'xs'} children={<Link aria-label="projects-page" to='projects' target={'_blank'}>user.projects();</Link>} />
                                 </Button>
                             </Collapse>
                         </ListItem>

@@ -68,7 +68,7 @@ function Calculator() {
         <React.Fragment>
             <Flex justifyContent={'center'} alignItems={'center'} height={'100vh'}>
                 <div className="calculator"> 
-                    <div className="result-container">
+                    <div className="result-container" style={{ overflow: 'hidden' }}>
                         <div className="result">{result ? result : ""}</div>
                         <div className="operand">{operand ? operand : "0"}</div>
                     </div>

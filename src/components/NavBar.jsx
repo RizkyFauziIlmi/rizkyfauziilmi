@@ -39,8 +39,6 @@ import {
     FaAndroid,
 } from 'react-icons/fa'
 import { HiChevronDoubleDown } from 'react-icons/hi'
-
-import { createBreakpoints } from '@chakra-ui/theme-tools'
 import image from '../assets/image/profile.png'
 
 
@@ -52,15 +50,6 @@ export default function NavBar() {
     const btnRef = React.useRef()
 
     const isDark = colorMode === 'dark'
-
-    createBreakpoints(
-        {
-            sm: '40em',
-            md: '52',
-            lg: '64em',
-            xl: '80em'
-        }
-    )
 
   return(
     <Flex alignItems={'center'} height={'max-content'} width={'100%'} justifyContent={'space-between'} p={5}>

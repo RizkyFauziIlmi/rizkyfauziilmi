@@ -49,8 +49,6 @@ import {
 
 import { Link } from 'react-router-dom'
 
-import { createBreakpoints } from '@chakra-ui/theme-tools'
-
 import React, { 
     useState 
 } from "react"
@@ -359,15 +357,6 @@ export default function Home() {
     100% { transform: rotate(0deg); }
     `
     const circleAnimation = (direction) => `${circleFrames} 3s linear ${direction} infinite`
-
-    createBreakpoints(
-        {
-            sm: '40em',
-            md: '52em',
-            lg: '64em',
-            xl: '80em'
-        }
-    )
 
     return(
         <React.Fragment>

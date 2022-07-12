@@ -23,7 +23,7 @@ import { SiAdblock } from 'react-icons/si'
 import { MdGraphicEq, MdVolumeDown, MdVolumeOff, MdVolumeUp } from 'react-icons/md'
 import { FiPause, FiPlay } from 'react-icons/fi'
 
-import databese from '../../database/database.json'
+import database from '../../database/database.json'
 import ReactPlayer from 'react-player';
 
 export default function MusicPanel() {
@@ -98,7 +98,7 @@ export default function MusicPanel() {
                     </h2>
                     <AccordionPanel textAlign={'center'}>
                         <Carousel infiniteLoop showThumbs={false} >
-                            {databese.Artist.local.map((data) => {
+                            {database.Artist.local.map((data) => {
                                 return(
                                     <div key={data.name}>
                                         <img src={data.image} alt={data.name} style={{ aspectRatio: "16/9" }} />
@@ -123,7 +123,7 @@ export default function MusicPanel() {
                     </h2>
                     <AccordionPanel textAlign={'center'}>
                         <Carousel infiniteLoop showThumbs={false}>
-                            {databese.Artist.nonlocal.map((data) => {
+                            {database.Artist.nonlocal.map((data) => {
                                 return(
                                     <div key={data.name}>
                                         <img src={data.image} alt={data.name} style={{ aspectRatio: "16/9" }}/>

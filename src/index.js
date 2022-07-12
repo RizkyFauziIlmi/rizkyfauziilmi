@@ -4,9 +4,10 @@ import App from './App';
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Quiz from './components/Quiz';
-import Recipe from './components/Recipe';
+
 import Calculator from './components/calculator/Calculator';
+import Quiz from './components/quiz/Quiz';
+import Recipe from './components/recipe/Recipe';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const Projects = React.lazy(() => import('./components/Projects'))

@@ -12,18 +12,8 @@ import {
 import { VscCode } from 'react-icons/vsc'
 import { FaCopyright } from 'react-icons/fa'
 import Tech from "./Other/Tech";
-import { createBreakpoints } from "@chakra-ui/theme-tools";
 
 export default function About() {
-    
-    createBreakpoints(
-        {
-            sm: '40em',
-            md: '52em',
-            lg: '64em',
-            xl: '80em'
-        }
-    )
 
     return(
         <React.Fragment>

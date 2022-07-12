@@ -4,9 +4,18 @@ import './App.css'
 import Link from "./components/Link";
 import Navbar from "./components/NavBar";
 import useDocumentTitle from './useDocumentTitle'
+import { createBreakpoints } from "@chakra-ui/theme-tools";
 
 function App() {
   useDocumentTitle("Rizky Fauzi Ilmi | Home")
+  createBreakpoints(
+    {
+        sm: '40em',
+        md: '52em',
+        lg: '64em',
+        xl: '80em'
+    }
+  )
 
   return(
     <VStack>

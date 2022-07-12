@@ -53,8 +53,6 @@ import {
     MdSettings 
 } from 'react-icons/md'
 import { HiChevronDoubleDown } from 'react-icons/hi';
-
-import { createBreakpoints } from "@chakra-ui/theme-tools";
 import image from '../assets/image/profile.png'
 
 export default function Projects() {
@@ -67,15 +65,6 @@ export default function Projects() {
     const isDark = colorMode === 'dark'
 
     useDocumentTitle("Rizky Fauzi Ilmi | Projects")
-
-    createBreakpoints(
-        {
-            sm: '40em',
-            md: '52em',
-            lg: '64em',
-            xl: '80em'
-        }
-    )
 
     const targetIframe = `${window.location.href}/project/${projecturl}`;
 

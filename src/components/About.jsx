@@ -49,6 +49,7 @@ export default function About() {
 ├── react@18.2.0
 ├── vercel@26.0.0
 ├── react-router-dom@6.3.0
+├── @fontsource/source-code-pro@4.5.10
 └── react-clamp-lines@3.0.3
                                    `
                                 }

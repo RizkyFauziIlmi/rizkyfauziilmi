@@ -18,12 +18,14 @@
 
 .certificate-image {
 	transform: unset;
+	border: 1px solid black;
 	box-shadow: none;
 	transition: 0.5s;
 }
 
 .certificate-image:hover {
 	transform: scale(1.2);
+	border: none;
 	box-shadow: 2px 2px 5px black;
 	border-radius: 5px;
 }

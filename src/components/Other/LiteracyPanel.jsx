@@ -24,7 +24,7 @@ import {
 
 import { FcAbout, FcApproval } from 'react-icons/fc'
 
-import databese from '../../database/database.json'
+import databese from '../../assets/database/database.json'
 
 
 export default function LiteracyPanel() {

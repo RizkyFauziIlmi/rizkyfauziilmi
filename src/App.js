@@ -1,9 +1,9 @@
 import React from "react";
 import { VStack } from '@chakra-ui/react'
-import './App.css'
+import './assets/global/Global.css'
 import Link from "./components/Link";
 import Navbar from "./components/NavBar";
-import useDocumentTitle from './useDocumentTitle'
+import useDocumentTitle from './assets/global/useDocumentTitle'
 import { createBreakpoints } from "@chakra-ui/theme-tools";
 
 function App() {

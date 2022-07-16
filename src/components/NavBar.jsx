@@ -25,8 +25,6 @@ import {
     Container
 } from "@chakra-ui/react"
 
-import '../App.css'
-
 import React from "react";
 
 import { 

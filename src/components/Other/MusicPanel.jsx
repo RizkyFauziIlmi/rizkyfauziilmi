@@ -23,7 +23,7 @@ import { SiAdblock } from 'react-icons/si'
 import { MdGraphicEq, MdVolumeDown, MdVolumeOff, MdVolumeUp } from 'react-icons/md'
 import { FiPause, FiPlay } from 'react-icons/fi'
 
-import database from '../../database/database.json'
+import database from '../../assets/database/database.json'
 import ReactPlayer from 'react-player';
 
 export default function MusicPanel() {

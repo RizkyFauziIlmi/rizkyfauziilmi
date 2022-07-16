@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useDocumentTitle from '../useDocumentTitle'
+import useDocumentTitle from '../assets/global/useDocumentTitle'
 import {
     Grid,
     GridItem,

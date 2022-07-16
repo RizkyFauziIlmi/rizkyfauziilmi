@@ -4,17 +4,30 @@ import App from './App';
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+// import font 200,300,400,500,600,700,800,900
+import "@fontsource/source-code-pro";
+import '@fontsource/source-code-pro/200.css'
+import '@fontsource/source-code-pro/300.css'
+import '@fontsource/source-code-pro/400.css'
+import '@fontsource/source-code-pro/500.css'
+import '@fontsource/source-code-pro/600.css'
+import '@fontsource/source-code-pro/700.css'
+import '@fontsource/source-code-pro/800.css'
+import '@fontsource/source-code-pro/900.css'
+
 
 import Calculator from './components/calculator/Calculator';
 import Quiz from './components/quiz/Quiz';
 import Recipe from './components/recipe/Recipe';
+import font from './assets/global/font';
+import colorscript from './assets/global/colorscript';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const Projects = React.lazy(() => import('./components/Projects'))
 root.render(
   <React.StrictMode>
-    <ChakraProvider>
-      <ColorModeScript initialColorMode={'dark'} />
+    <ChakraProvider theme={font}>
+      <ColorModeScript initialColorMode={colorscript.config.initialColorMode} />
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<App />} />

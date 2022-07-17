@@ -15,4 +15,4 @@ this repository is about my portofolio
 ### `npm start`
 
 ## Or you can just simply visit the website
-[rizkyfauziilmi.vercel.app]
+(https://rizkyfauziilmi.vercel.app)

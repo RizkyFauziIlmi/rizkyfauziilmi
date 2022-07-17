@@ -1,4 +1,4 @@
-this repository is about my portofolio
+this repository is about my portofolio that build with chakra ui
 
 ## Table of contents
 * [see source by forking repository](#fork-the-project)
